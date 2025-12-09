@@ -7,12 +7,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: confluence-markdown-sync
-        uses: cupcakearmy/confluence-markdown-sync@v1
-        with:
-          from: 'docs/README.md'
-          to: '720109569'
-          cloud: ${{ secrets.CONFLUENCE_CLOUD }}
-          user: ${{ secrets.CONFLUENCE_USER }} 
-          token: ${{ secrets.CONFLUENCE_TOKEN }}
+      # - name: confluence-markdown-sync
+      #   uses: cupcakearmy/confluence-markdown-sync@v1
+      #   with:
+      #     from: 'docs/README.md'
+      #     to: '720109569'
+      #     cloud: ${{ secrets.CONFLUENCE_CLOUD }}
+      #     user: ${{ secrets.CONFLUENCE_USER }} 
+      #     token: ${{ secrets.CONFLUENCE_TOKEN }}
 
+      - name: Sync Docs as Code - Confluence
+        uses: Bhacaz/docs-as-code-confluence@v3
+        with:
+          folder: docs
+          username: ${{ secrets.CONFLUENCE_USER }}
+          password: ${{ secrets.CONFLUENCE_TOKEN }}
+          confluence-base-url: https://futu-reco.atlassian.net/wiki
+          space-key: F
+          parent-page-id: 720109569
