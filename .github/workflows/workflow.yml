@@ -25,3 +25,5 @@ jobs:
           confluence-base-url: https://futu-reco.atlassian.net/wiki
           space-key: F
           parent-page-id: 720109569
+      #https://github.com/marketplace/actions/docs-as-code-confluence
+      #https://github.com/Bhacaz/docs-as-code-confluence
